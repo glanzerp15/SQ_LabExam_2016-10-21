@@ -14,7 +14,7 @@ public class StringStackTest {
 	public TestName testname = new TestName();
 	final static Logger logger = Logger.getLogger("Testlogger");
 
-	public Stack s;
+	private StringStack s;
 
 	@Before
 	public void setup() {
@@ -25,11 +25,10 @@ public class StringStackTest {
 	/**
 	 * check that Elements are removed from stack to avoid memory leaks!
 	 */
+	@Test
 	public void testStringStackContent() {
 
-		s = new StringStack(5);
-
-		assertTrue(areAllArrayElementsNull(((StringStack) s).elementData));
+		assertTrue(s.isEmpty());
 
 		s.push("aaa");
 		s.push("bbb");
@@ -43,7 +42,7 @@ public class StringStackTest {
 		s.pop();
 		s.pop();
 
-		assertTrue(areAllArrayElementsNull(((StringStack) s).elementData));
+		assertTrue(s.isEmpty());
 
 	}
 
@@ -52,13 +51,14 @@ public class StringStackTest {
 	 * if all elements are null - true is returned
 	 * if at least one element is found not to be null - false is returned.
 	 */
-	private boolean areAllArrayElementsNull(String[] array) {
+	@Test
+	public void areAllArrayElementsNull() {
 
-		for (String str : array) {
-			if (str == null)
-				return false;
+		for (String str : s.getElementData()) {
+			if (str != null)
+				assertTrue(false);
 		}
-		return true;
+		assertTrue(true);
 	}
 
 	/**
@@ -67,6 +67,7 @@ public class StringStackTest {
 	 * use two asserts - assertTrue to check it's empty - assertFalse to check
 	 * it's not empty
 	 */
+	@Test
 	public void testIsEmpty() {
 		assertTrue(s.isEmpty());
 		s.push("one");
@@ -84,9 +85,18 @@ public class StringStackTest {
 	 * 
 	 * @throws Exception
 	 */
+	@Test
 	public void testPushPop() {
-		fail("not implemented yet!");
-		// TODO: add implementation for this test according to the Javadoc-comment
+				
+		for(int x = 0; x < s.getElementData().length; x++)
+		{
+			s.push("aaa");		
+		}
+		
+		for(int x = 0; x < s.getElementData().length; x++)
+		{
+			s.pop();
+		}
 		
 		assertTrue(s.isEmpty());
 	}
@@ -95,6 +105,7 @@ public class StringStackTest {
 	 * use pop on empty stack an exception must be "expected" (!) it's not valid
 	 * to use an if else case (!)
 	 */
+	@Test(expected = IllegalStateException.class)
 	public void testPopEmptyStack() {
 		s.pop(); // !!!
 	}
@@ -106,8 +117,10 @@ public class StringStackTest {
 	 */
 	@Test(expected = ArrayIndexOutOfBoundsException.class)
 	public void testPushFullStack() {
-		fail("not implemented yet!");
-		// TODO: add implementation for this test according to the Javadoc-comment
 		
+		for(int x = 0; x <= s.getElementData().length; x++)
+		{
+			s.push("aaa");
+		}
 	}
 }

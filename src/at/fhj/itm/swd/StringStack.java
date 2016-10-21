@@ -31,8 +31,10 @@ public class StringStack implements Stack {
 	public StringStack(int capacity) {
 		logger.info("Capacity:" + capacity);
 		if (capacity <= 0)
+		{
 			logger.warning("Capacity IllegalArgumentException:" + capacity);
-			throw new IllegalArgumentException("size must be <= 0");
+			throw new IllegalArgumentException("size must be = 0");
+		}
 
 		elementData = new String[capacity];
 		elementIndex = 0;
@@ -40,35 +42,47 @@ public class StringStack implements Stack {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO: implement 
-		// if the array is empty return true,
-		// otherwise there are elements and return false.
-
+		if(elementIndex == 0)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 
-	@Override
-	public void prush(String item) {
-		if (elementIndex == elementData.length)
-			throw new IllegalStateException();
-
-		// add element to array and increment the counter
-		elementData[elementIndex++] = item;
-	}
 
 	@Override
 	public String pop() {
-		if (elementIndex != 0)
+		if (elementIndex == 0)
 			throw new IllegalStateException();
-
+		elementIndex = elementIndex - 1;
+		String element = elementData[elementIndex];
+		
 		// returns the element and decrement the counter
 		// hint: change below
-		return elementData[--elementIndex];
+		return element;
 
+	}
+
+	public String[] getElementData() {
+		return elementData;
+	}
+
+	public void setElementData(String[] elementData) {
+		this.elementData = elementData;
 	}
 
 	@Override
 	public void push(String item) {
-		// TODO Auto-generated method stub
+		if (elementIndex == elementData.length)
+			throw new ArrayIndexOutOfBoundsException();
+		
+		elementIndex = elementIndex + 1;
+		
+		// add element to array and increment the counter
+		elementData[elementIndex - 1] = item;
+
+		
 		
 	}
 }
