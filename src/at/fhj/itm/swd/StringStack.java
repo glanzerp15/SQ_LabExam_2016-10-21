@@ -1,5 +1,7 @@
 package at.fhj.itm.swd;
 
+import java.util.logging.Logger;
+
 /**
  * Stack Implementation of <code>Stack</code> Interface. supports Strings and
  * must be initialized with max. number of of items.
@@ -12,6 +14,7 @@ public class StringStack implements Stack {
 	 */
 	// hint: change visibility!
 	private String[] elementData;
+	final static Logger logger = Logger.getLogger("Testlogger");
 
 	/**
 	 * is the position counter of the top item
@@ -26,7 +29,9 @@ public class StringStack implements Stack {
 	 *            0, the Constructor will throw an exception
 	 */
 	public StringStack(int capacity) {
+		logger.info("Capacity:" + capacity);
 		if (capacity <= 0)
+			logger.warning("Capacity IllegalArgumentException:" + capacity);
 			throw new IllegalArgumentException("size must be <= 0");
 
 		elementData = new String[capacity];
@@ -59,5 +64,11 @@ public class StringStack implements Stack {
 		// hint: change below
 		return elementData[--elementIndex];
 
+	}
+
+	@Override
+	public void push(String item) {
+		// TODO Auto-generated method stub
+		
 	}
 }

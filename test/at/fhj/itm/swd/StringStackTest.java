@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestName;
 
 public class StringStackTest {
 	@Rule
