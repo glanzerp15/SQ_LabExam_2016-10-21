@@ -32,7 +32,7 @@ public class StringStack implements Stack {
 		logger.info("Capacity:" + capacity);
 		if (capacity <= 0)
 		{
-			logger.warning("Capacity IllegalArgumentException:" + capacity);
+			logger.warning("Capacity IllegalArgumentException: " + capacity);
 			throw new IllegalArgumentException("size must be = 0");
 		}
 
@@ -44,9 +44,10 @@ public class StringStack implements Stack {
 	public boolean isEmpty() {
 		if(elementIndex == 0)
 		{
+			logger.info("Stack is empty");
 			return true;
 		}
-		
+		logger.info("Stack is not empty");
 		return false;
 	}
 
@@ -54,12 +55,16 @@ public class StringStack implements Stack {
 	@Override
 	public String pop() {
 		if (elementIndex == 0)
+		{
+			logger.warning("Capacity IllegalArgumentException:" + elementIndex + " elementIndex");
 			throw new IllegalStateException();
-		elementIndex = elementIndex - 1;
+		}
+		elementIndex--;
 		String element = elementData[elementIndex];
 		
 		// returns the element and decrement the counter
 		// hint: change below
+		elementData[elementIndex] = null;
 		return element;
 
 	}
@@ -68,8 +73,8 @@ public class StringStack implements Stack {
 		return elementData;
 	}
 
-	public void setElementData(String[] elementData) {
-		this.elementData = elementData;
+	public int getElementIndex() {
+		return elementIndex;
 	}
 
 	@Override
@@ -77,7 +82,7 @@ public class StringStack implements Stack {
 		if (elementIndex == elementData.length)
 			throw new ArrayIndexOutOfBoundsException();
 		
-		elementIndex = elementIndex + 1;
+		elementIndex++;
 		
 		// add element to array and increment the counter
 		elementData[elementIndex - 1] = item;

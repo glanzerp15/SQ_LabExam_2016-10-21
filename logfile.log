@@ -1,12 +1,20 @@
-2016-10-21 20:10:43.629 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPushFullStack 
-2016-10-21 20:10:43.656 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
-2016-10-21 20:10:43.660 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: areAllArrayElementsNull 
-2016-10-21 20:10:43.662 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
-2016-10-21 20:10:43.663 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testStringStackContent 
-2016-10-21 20:10:43.665 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
-2016-10-21 20:10:43.666 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPushPop 
-2016-10-21 20:10:43.666 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
-2016-10-21 20:10:43.667 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testIsEmpty 
-2016-10-21 20:10:43.668 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
-2016-10-21 20:10:43.669 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPopEmptyStack 
-2016-10-21 20:10:43.670 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.755 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPushFullStack 
+2016-10-26 17:13:39.788 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.792 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testStringStackContent 
+2016-10-26 17:13:39.794 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.796 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest testStringStackContent 0 
+2016-10-26 17:13:39.797 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest testStringStackContent 5 
+2016-10-26 17:13:39.798 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest testStringStackContent 0 
+2016-10-26 17:13:39.800 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPushPop 
+2016-10-26 17:13:39.801 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.803 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is empty 
+2016-10-26 17:13:39.804 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is not empty 
+2016-10-26 17:13:39.805 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is empty 
+2016-10-26 17:13:39.812 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testIsEmpty 
+2016-10-26 17:13:39.819 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.820 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is empty 
+2016-10-26 17:13:39.821 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is not empty 
+2016-10-26 17:13:39.822 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack isEmpty Stack is empty 
+2016-10-26 17:13:39.824 INFORMATION [Testlogger] at.fhj.itm.swd.StringStackTest setup Starting test: testPopEmptyStack 
+2016-10-26 17:13:39.830 INFORMATION [Testlogger] at.fhj.itm.swd.StringStack <init> Capacity:5 
+2016-10-26 17:13:39.831 WARNUNG [Testlogger] at.fhj.itm.swd.StringStack pop Capacity IllegalArgumentException:0 elementIndex 

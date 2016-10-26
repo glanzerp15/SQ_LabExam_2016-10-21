@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import java.util.logging.Logger;
 
+import org.hamcrest.core.IsEqual;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -28,21 +29,29 @@ public class StringStackTest {
 	@Test
 	public void testStringStackContent() {
 
-		assertTrue(s.isEmpty());
+		assertTrue(areAllArrayElementsNull(s.getElementData()));
 
+		logger.info(s.getElementIndex()+ "");
+		
 		s.push("aaa");
 		s.push("bbb");
 		s.push("ccc");
 		s.push("ddd");
 		s.push("eee");
 
+		logger.info(s.getElementIndex()+ "");
+
+		
 		s.pop();
 		s.pop();
 		s.pop();
 		s.pop();
 		s.pop();
 
-		assertTrue(s.isEmpty());
+		logger.info(s.getElementIndex()+ "");
+
+		
+		assertTrue(areAllArrayElementsNull(s.getElementData()));
 
 	}
 
@@ -51,14 +60,17 @@ public class StringStackTest {
 	 * if all elements are null - true is returned
 	 * if at least one element is found not to be null - false is returned.
 	 */
-	@Test
-	public void areAllArrayElementsNull() {
+	
+	public boolean areAllArrayElementsNull(String[] array) {
 
-		for (String str : s.getElementData()) {
+		for (String str : array) {
 			if (str != null)
-				assertTrue(false);
+			{
+				logger.info("String is not empty");
+				return false;
+			}
 		}
-		assertTrue(true);
+		return true;
 	}
 
 	/**
@@ -88,15 +100,14 @@ public class StringStackTest {
 	@Test
 	public void testPushPop() {
 				
-		for(int x = 0; x < s.getElementData().length; x++)
-		{
-			s.push("aaa");		
-		}
+		assertTrue(s.isEmpty());
+
+		s.push("aaa");		
+
+		assertFalse(s.isEmpty());
+
+		s.pop();
 		
-		for(int x = 0; x < s.getElementData().length; x++)
-		{
-			s.pop();
-		}
 		
 		assertTrue(s.isEmpty());
 	}

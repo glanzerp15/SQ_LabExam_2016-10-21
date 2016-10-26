@@ -23,5 +23,4 @@ public interface Stack {
 	 * if Stack is empty return an error message
 	 */
 	public abstract String pop();
-
 }
